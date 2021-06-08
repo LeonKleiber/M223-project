@@ -21,6 +21,15 @@ public class Person implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
+	private int age;
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
 
 	@ManyToMany
 	private List<Language> languages;
