@@ -14,6 +14,9 @@
 				<p:inputText value="#{personBean.person.name}" required="true" label="#{bundle.personName}" />
 				<h:outputText value="* #{bundle.personAge}" />
 				<p:inputText value="#{personBean.person.age}" required="true" label="#{bundle.personAge}" />
+				<h:outputText value="* #{bundle.personCountry}" />
+				<p:autoComplete forceSelection="true" value="#{countryBean.country}" label="#{bundle.country}" required="true" var="country"
+				itemLabel="#{country.name}" itemValue="#{country}" completeMethod="#{countryBean.getAllCountries()}" dropdown="true" />
 				<p:commandButton id="saveBtn" value="#{bundle.create}" icon="pi pi-plus"
 					action="#{personBean.createPerson()}"
 					onclick="$('#saveBtn').attr('disabled',true);"

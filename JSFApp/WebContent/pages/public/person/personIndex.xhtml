@@ -22,8 +22,13 @@
 
 						<h:outputText value="#{person.age}" />
 					</p:column>
+					<p:column>
+						<f:facet name="header">
+							<h:outputText value="#{bundle.personCountry}" />
+						</f:facet>
 
-
+						<h:outputText  value="#{bundle.personCountry}" />
+					</p:column>
 					<p:column>
 						<p:commandButton icon="pi pi-info" onclick="PF('personDetailDialogWidget').show()" update=":personDetailDialogForm" >
 							<f:setPropertyActionListener target="#{personBean.personWithLanguagesForDetail}" value="#{person}" />
@@ -42,7 +47,10 @@
 								<f:setPropertyActionListener target="#{personBean.person}" value="#{person}" />
 						</p:commandButton>
 					</p:column>
+					
 
+
+					
 				</p:dataTable>
 				<p:commandButton value="#{bundle.create} #{bundle.person}" icon="pi pi-plus" update=":personCreateDialogForm"
 					actionListener="#{personBean.resetPerson()}" onclick="PF('personCreateDialogWidget').show()" />

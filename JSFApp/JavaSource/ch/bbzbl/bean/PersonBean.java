@@ -10,6 +10,7 @@ import javax.faces.bean.ViewScoped;
 
 import com.sun.faces.context.flash.ELFlash;
 
+import ch.bbzbl.entity.Country;
 import ch.bbzbl.entity.Language;
 import ch.bbzbl.entity.Person;
 import ch.bbzbl.facade.PersonFacade;
@@ -32,6 +33,8 @@ public class PersonBean extends AbstractBean implements Serializable {
 
 	private List<Person> persons;
 	private PersonFacade personFacade;
+
+	private Country country;
 
 	public void createPerson() {
 		try {
@@ -202,5 +205,17 @@ public class PersonBean extends AbstractBean implements Serializable {
 
 	private void reloadPersonWithLanguages() {
 		personWithLanguages = getPersonFacade().findPersonWithAllLanguages(person.getId());
+	}
+	
+	public Country getCountry() {
+		if (country == null) {
+			country = new Country();
+		}
+
+		return country;
+	}
+
+	public void setCountry(Country country) {
+		this.country = country;
 	}
 }
