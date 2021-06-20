@@ -24,6 +24,14 @@ public class Person implements Serializable {
 	
 
 
+	public Country getCountry() {
+		return country;
+	}
+
+	public void setCountry(Country country) {
+		this.country = country;
+	}
+
 	@ManyToMany
 	private List<Language> languages;
 

@@ -27,7 +27,7 @@
 							<h:outputText value="#{bundle.personCountry}" />
 						</f:facet>
 
-						<h:outputText  value="#{bundle.personCountry}" />
+						<h:outputText  value="#{person.country.name}" />
 					</p:column>
 					<p:column>
 						<p:commandButton icon="pi pi-info" onclick="PF('personDetailDialogWidget').show()" update=":personDetailDialogForm" >
