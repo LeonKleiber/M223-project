@@ -37,6 +37,10 @@ public class UserFacade implements Serializable{
 		EntityManagerHelper.commitAndCloseTransaction();
 		return user;
 	}
+	
+	public User isValidLogin(String username, String password) {
+		return this.findUser(1);
+	}
 
 	public List<User> listAll() {
 		EntityManagerHelper.beginTransaction();

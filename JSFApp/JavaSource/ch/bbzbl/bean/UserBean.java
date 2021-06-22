@@ -14,6 +14,8 @@ import ch.bbzbl.facade.UserFacade;
 public class UserBean extends AbstractBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	public static final String DI_NAME = "Hi";
+
 	private User user;
 	private List<User> users;
 	private UserFacade userFacade;
@@ -38,20 +40,6 @@ public class UserBean extends AbstractBean implements Serializable {
 		this.user = user;
 	}
 
-	public void createUser() {
-		try {
-			getUserFacade().createUser(user);
-			closeDialog();
-			displayInfoMessageToUser("Created with success");
-			loadUsers();
-			resetUser();
-		} catch (Exception e) {
-			keepDialogOpen();
-			displayErrorMessageToUser("A problem occurred while saving. Try again later");
-			e.printStackTrace();
-		}
-	}
-	
 	public void updateUser() {
 		try {
 			getUserFacade().updateUser(user);
@@ -62,20 +50,6 @@ public class UserBean extends AbstractBean implements Serializable {
 		} catch (Exception e) {
 			keepDialogOpen();
 			displayErrorMessageToUser("A problem occurred while updating. Try again later");
-			e.printStackTrace();
-		}
-	}
-	
-	public void deleteCountry() {
-		try {
-			getUserFacade().deleteUser(user);
-			closeDialog();
-			displayInfoMessageToUser("Deleted with success");
-			loadUsers();
-			resetUser();
-		} catch (Exception e) {
-			keepDialogOpen();
-			displayErrorMessageToUser("A problem occurred while removing. Try again later");
 			e.printStackTrace();
 		}
 	}
@@ -94,5 +68,9 @@ public class UserBean extends AbstractBean implements Serializable {
 
 	public void resetUser() {
 		user = new User();
+	}
+	
+	public void loginUser() {
+		
 	}
 }

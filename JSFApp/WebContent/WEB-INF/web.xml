@@ -3,7 +3,7 @@
 	xmlns="http://java.sun.com/xml/ns/javaee"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	version="3.0">
-	<display-name>JSFApp</display-name>
+	<display-name>Coole app</display-name>
 	<servlet>
 		<servlet-name>Faces Servlet</servlet-name>
 		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
@@ -24,4 +24,17 @@
 		<param-name>primefaces.THEME</param-name>
 		<param-value>nova-light</param-value>
 	</context-param>
+	<filter>
+		<filter-name>LoginFilter</filter-name>
+		<filter-class>ch.bbzbl.filter.LoginFilter</filter-class>
+		<init-param>
+		<param-name>loginActionURI</param-name>
+		<param-value>/JSFApp/pages/public/loginIndex.xhtml</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>LoginFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
 </web-app>
+

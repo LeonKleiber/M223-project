@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core" xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<h:outputStylesheet library="css" name="main.css" />
+</h:head>
+<h:body>
+	<p:panel id="divTop">
+		<ui:insert name="divTop">
+				<ui:include src="./templates/top.xhtml"/> 
+			</ui:insert>
+	</p:panel>
+	
+	<p:panel id="divMain" style="position: absolute; left: 0; right: 0; display: flex; justify-content: center;">
+		<p:growl id="messageGrowl" />
+			<h:form id="loginForm" style="display: flex; flex-direction: column; max-width: 300px;">
+				<h:panelGrid columns="2">
+					<h:outputText value="#{bundle.username}" />
+					<p:inputText value="#{loginBean.username}" required="true" label="#{bundle.username}" />
+					<h:outputText value="#{bundle.password}" />
+					<p:password value="#{loginBean.password}" required="true" label="#{bundle.password}" autocomplete="off">
+						
+					</p:password>
+				</h:panelGrid>
+				<p:commandButton value="#{bundle.login}" icon="pi pi-unlock"
+					actionListener="#{loginBean.login()}" />
+			</h:form>
+		</p:panel>
+	</h:body>
+</html>

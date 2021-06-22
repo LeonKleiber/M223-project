@@ -102,3 +102,12 @@ a:link, a:visited, a:hover, a:active {
 .ui-orderlist.langlist .ui-orderlist-list {
  	height: 80px;
 }
+
+#divMain.center {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+}
