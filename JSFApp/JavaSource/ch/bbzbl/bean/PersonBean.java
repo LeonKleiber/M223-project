@@ -34,8 +34,6 @@ public class PersonBean extends AbstractBean implements Serializable {
 	private List<Person> persons;
 	private PersonFacade personFacade;
 
-	private Country country;
-
 	public void createPerson() {
 		try {
 			getPersonFacade().createPerson(person);
@@ -207,15 +205,5 @@ public class PersonBean extends AbstractBean implements Serializable {
 		personWithLanguages = getPersonFacade().findPersonWithAllLanguages(person.getId());
 	}
 	
-	public Country getCountry() {
-		if (country == null) {
-			country = new Country();
-		}
 
-		return country;
-	}
-
-	public void setCountry(Country country) {
-		this.country = country;
-	}
 }

@@ -20,7 +20,7 @@ public class CountryConverter implements Converter{
 		try {
 			cntrId = Integer.parseInt(arg2);
 		} catch (NumberFormatException exception) {
-			throw new ConverterException(new FacesMessage(FacesMessage.SEVERITY_ERROR, "Type the name of a language and select it (or use the dropdown)", "Type the name of a language and select it (or use the dropdown)"));
+			throw new ConverterException(new FacesMessage(FacesMessage.SEVERITY_ERROR, "Type the name of a country and select it (or use the dropdown)", "Type the name of a language and select it (or use the dropdown)"));
 		}
 
 		return cntrFacade.findCountry(cntrId);
