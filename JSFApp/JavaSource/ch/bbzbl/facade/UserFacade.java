@@ -4,43 +4,43 @@ import java.io.Serializable;
 import java.util.List;
 
 import ch.bbzbl.dao.EntityManagerHelper;
-import ch.bbzbl.dao.CountryDAO;
-import ch.bbzbl.entity.Country;
+import ch.bbzbl.dao.UserDAO;
+import ch.bbzbl.entity.User;
 
 public class UserFacade implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
-	private CountryDAO countryDAO = new CountryDAO();
+	private UserDAO userDAO = new UserDAO();
 
-	public void createCountry(Country country) {
+	public void createUser(User user) {
 		EntityManagerHelper.beginTransaction();
-		countryDAO.save(country);
+		userDAO.save(user);
 		EntityManagerHelper.commitAndCloseTransaction();
 	}
 
-	public void updateCountry(Country country) {
+	public void updateUser(User user) {
 		EntityManagerHelper.beginTransaction();
-		countryDAO.update(country);
+		userDAO.update(user);
 		EntityManagerHelper.commitAndCloseTransaction();
 	}
 	
-	public void deleteCountry(Country country) {
+	public void deleteUser(User user) {
 		EntityManagerHelper.beginTransaction();
-		Country persistedcnt = countryDAO.findReferenceOnly(country.getId());
-		countryDAO.delete(persistedcnt);
+		User persistence = userDAO.findReferenceOnly(user.getId());
+		userDAO.delete(persistence);
 		EntityManagerHelper.commitAndCloseTransaction();
 	}
 
-	public Country findCountry(int countryId) {
+	public User findUser(int countryId) {
 		EntityManagerHelper.beginTransaction();
-		Country country = countryDAO.find(countryId);
+		User user = userDAO.find(countryId);
 		EntityManagerHelper.commitAndCloseTransaction();
-		return country;
+		return user;
 	}
 
-	public List<Country> listAll() {
+	public List<User> listAll() {
 		EntityManagerHelper.beginTransaction();
-		List<Country> result = countryDAO.findAll();
+		List<User> result = userDAO.findAll();
 		EntityManagerHelper.commitAndCloseTransaction();
 		return result;
 	}
