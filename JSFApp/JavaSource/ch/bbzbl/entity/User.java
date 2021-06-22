@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.NamedQuery;
+import javax.persistence.Version;
 
 @Entity
 public class User implements Serializable {
@@ -22,6 +23,18 @@ public class User implements Serializable {
 	private String password;
 	private String preferenceColor;
 	private int role;
+	
+	@Version
+	private long version;
+	
+	public long getVersion() {
+		return version;
+	}
+
+
+	public void setVersion(long version) {
+		this.version = version;
+	}
 	
 
 	public String getUsername() {
