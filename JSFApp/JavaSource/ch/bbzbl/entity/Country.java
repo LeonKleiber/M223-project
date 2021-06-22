@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.NamedQuery;
+import javax.persistence.Version;
 
 @Entity
 public class Country implements Serializable {
@@ -19,9 +20,22 @@ public class Country implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
+	
+	@Version
+	private long version;
+	
+	public long getVersion() {
+		return version;
+	}
+
+
+	public void setVersion(long version) {
+		this.version = version;
+	}
 	public String getName() {
 		return name;
 	}
+	
 
 	public void setName(String name) {
 		this.name = name;

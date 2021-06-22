@@ -18,6 +18,18 @@ public class Person implements Serializable {
 	private String name;
 	private int age;
 	
+	@Version
+	private long version;
+	
+	public long getVersion() {
+		return version;
+	}
+
+
+	public void setVersion(long version) {
+		this.version = version;
+	}
+	
 	@ManyToOne
 	@JoinColumn(name="country", foreignKey=@javax.persistence.ForeignKey(name="country_fk"))
 	private Country country;
