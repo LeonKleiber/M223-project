@@ -22,8 +22,10 @@ public class User implements Serializable {
 	private String username;
 	private String password;
 	private String preferenceColor;
-	private int role;
+	private boolean admin;
 	
+	
+
 	@Version
 	private long version;
 	
@@ -61,20 +63,21 @@ public class User implements Serializable {
 		this.preferenceColor = preferenceColor;
 	}
 
-	public int getRole() {
-		return role;
-	}
-
-	public void setRole(int role) {
-		this.role = role;
-	}
-
 	public int getId() {
 		return id;
 	}
 
 	public void setId(int id) {
 		this.id = id;
+	}
+	
+	public boolean isAdmin() {
+		return admin;
+	}
+
+
+	public void setAdmin(boolean admin) {
+		this.admin = admin;
 	}
 
 	@Override

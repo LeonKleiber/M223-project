@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
 
 import ch.bbzbl.entity.User;
 import ch.bbzbl.facade.UserFacade;
@@ -14,11 +15,20 @@ import ch.bbzbl.facade.UserFacade;
 public class UserBean extends AbstractBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	public static final String DI_NAME = "Hi";
+	public static final String DI_NAME = "#{userBean}";
 
 	private User user;
 	private List<User> users;
 	private UserFacade userFacade;
+	
+	public boolean isAdmin() {
+		return user.isAdmin();
+	}
+		
+	public String logOut() {
+		FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+		return "/pages/public/login.xhtml";
+	}
 
 	public UserFacade getUserFacade() {
 		if (userFacade == null) {
@@ -68,9 +78,5 @@ public class UserBean extends AbstractBean implements Serializable {
 
 	public void resetUser() {
 		user = new User();
-	}
-	
-	public void loginUser() {
-		
 	}
 }

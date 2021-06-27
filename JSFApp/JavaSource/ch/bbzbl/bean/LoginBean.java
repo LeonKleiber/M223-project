@@ -1,15 +1,15 @@
 package ch.bbzbl.bean;
 import javax.annotation.*;
-import javax.annotation.ManagedBean;
+
 import javax.faces.bean.*;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpServletRequest;
-
+import javax.faces.bean.ManagedBean;
 import ch.bbzbl.entity.User;
 import ch.bbzbl.facade.UserFacade;
 
 @RequestScoped
-@ManagedBean
+@ManagedBean(name="loginBean")
 public class LoginBean extends AbstractBean {
 	@ManagedProperty(value = UserBean.DI_NAME)
 	private UserBean userBean;
@@ -27,14 +27,32 @@ public class LoginBean extends AbstractBean {
 			context.getExternalContext().getRequest();
 	
 			request.getSession().setAttribute("user", user); 
-			return "/pages/protected/index.xhtml"; 
+			return "/"; 
 		}
 		displayErrorMessageToUser("Check username and/or password");
-		return null;
+		return "index?faces-redirect=true";
 	}
 	
 	public void setUserBean(UserBean userBean) {
 		this.userBean = userBean;
-	}				
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}		
+	
+	
 }
 	
