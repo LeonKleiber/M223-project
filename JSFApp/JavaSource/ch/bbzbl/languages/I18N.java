@@ -1,7 +1,12 @@
 package ch.bbzbl.languages;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class I18N {
-	public static I18N[] languages = {new En(), new De(), new Ch()};
+	
+	public static List<I18N> languages = new ArrayList<I18N>(Arrays.asList(new En(),new De(), new Ch()));
 	
 	public String name;
 	
