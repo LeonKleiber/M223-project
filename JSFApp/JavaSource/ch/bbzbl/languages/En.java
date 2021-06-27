@@ -2,7 +2,8 @@ package ch.bbzbl.languages;
 
 public class En extends I18N {
 	public En() {
-		name="En";
+		super();
+		name="EN";
 		//Actions
 		welcomeMessage = "Welcome to your first JSF application. Look at the small overview of JSF architecture";
 		update="Update";
@@ -42,5 +43,10 @@ public class En extends I18N {
 		password="Password";
 		login="Login";
 		logout="Logout";
+		myAccount="My Account";
+		i18nLang="Preferred Language";
+		isAdmin="Are you admin";
+		changeLanguage="Change preferred language";
+		updateLanguage="Update language";
 	}
 }

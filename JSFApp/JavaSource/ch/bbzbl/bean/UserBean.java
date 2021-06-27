@@ -1,33 +1,34 @@
 package ch.bbzbl.bean;
 
 import java.io.Serializable;
-import java.util.List;
 
+import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.context.FacesContext;
 
 import ch.bbzbl.entity.User;
 import ch.bbzbl.facade.UserFacade;
 
-@ViewScoped
+@SessionScoped
 @ManagedBean(name="userBean")
 public class UserBean extends AbstractBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	public static final String DI_NAME = "#{userBean}";
+	//@ManagedProperty("#{i18NBean}")
+	//private I18NBean i18nBean;
 
 	private User user;
-	private List<User> users;
 	private UserFacade userFacade;
 	
 	public boolean isAdmin() {
 		return user.isAdmin();
 	}
 		
-	public String logOut() {
+	public String logout() {
 		FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
-		return "/pages/public/login.xhtml";
+		return "/pages/public/loginIndex.xhtml";
 	}
 
 	public UserFacade getUserFacade() {
@@ -48,6 +49,7 @@ public class UserBean extends AbstractBean implements Serializable {
 
 	public void setUser(User user) {
 		this.user = user;
+		//i18nBean.setLanguageByString(user.getLanguage());
 	}
 
 	public void updateUser() {
@@ -55,25 +57,12 @@ public class UserBean extends AbstractBean implements Serializable {
 			getUserFacade().updateUser(user);
 			closeDialog();
 			displayInfoMessageToUser("Updated with success");
-			loadUsers();
 			resetUser();
 		} catch (Exception e) {
 			keepDialogOpen();
 			displayErrorMessageToUser("A problem occurred while updating. Try again later");
 			e.printStackTrace();
 		}
-	}
-
-	public List<User> getAllUsers() {
-		if (users == null) {
-			loadUsers();
-		}
-
-		return users;
-	}
-
-	private void loadUsers() {
-		users = getUserFacade().listAll();
 	}
 
 	public void resetUser() {

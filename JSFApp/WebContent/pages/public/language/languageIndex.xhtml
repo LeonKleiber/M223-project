@@ -5,12 +5,12 @@
 	<ui:composition template="/pages/public/templates/master.xhtml">
 		<ui:define name="divMain">
 			<h:form id="languagesForm">
-				<p:dataTable id="languagesTable" value="#{languageBean.allLanguages}" var="language" emptyMessage="#{bundle.noRecords}" paginator="true" rows="10"
+				<p:dataTable id="languagesTable" value="#{languageBean.allLanguages}" var="language" emptyMessage="#{I18NBean.language.noRecords}" paginator="true" rows="10"
 					paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
 					rowsPerPageTemplate="5,10,15">
 					<p:column>
 						<f:facet name="header">
-							<h:outputText value="#{bundle.languageName}" />
+							<h:outputText value="#{I18NBean.language.languageName}" />
 						</f:facet>
 
 						<h:outputText value="#{language.name}" />
@@ -31,7 +31,7 @@
 					</p:column>
 
 				</p:dataTable>
-				<p:commandButton value="#{bundle.create} #{bundle.language}" icon="pi pi-plus" update=":languageCreateDialogForm"
+				<p:commandButton value="#{I18NBean.language.create} #{I18NBean.language.language}" icon="pi pi-plus" update=":languageCreateDialogForm"
 					actionListener="#{languageBean.resetLanguage()}" onclick="PF('languageCreateDialogWidget').show()" />
 			</h:form>
 

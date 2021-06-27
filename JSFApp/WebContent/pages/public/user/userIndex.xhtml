@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core" xmlns:p="http://primefaces.org/ui">
+<h:body>
+	<ui:composition template="/pages/public/templates/master.xhtml">
+		<ui:define name="divMain">
+			<h:form id="userForm">
+				<div id="topMessage" style="ui-panel">
+				My Account
+				</div>
+				<h:panelGrid columns="2">
+					<h:outputText value="#{I18NBean.language.username}" />
+					<h:outputText value="#{userBean.user.username}" />
+					<h:outputText value="#{I18NBean.language.i18nLang}" />
+					<h:outputText value="#{userBean.user.language}" />
+					<h:outputText value="#{I18NBean.language.isAdmin}" />
+					<h:outputText value="#{userBean.user.admin}" />
+					<p:commandButton value="#{I18NBean.language.changeLanguage}" icon="pi pi-user-edit" update=":userUpdateDialogForm"
+					 onclick="PF('userUpdateDialogWidget').show()" />
+					<p:commandButton value="#{I18NBean.language.logout}" icon="pi pi-unlock" actionListener="#{userBean.logout()}" />
+					
+				</h:panelGrid>
+			</h:form>
+
+	<ui:include src="/pages/public/user/dialogs/userUpdateDialog.xhtml" />
+		</ui:define>
+	</ui:composition>
+	
+</h:body>
+</html>

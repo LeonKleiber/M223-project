@@ -10,20 +10,20 @@
 		closable="true" draggable="false" resizable="false">
 		<h:form id="personCreateDialogForm" prependId="false">
 			<h:panelGrid columns="2">
-				<h:outputText value="* #{bundle.personName}" />
-				<p:inputText value="#{personBean.person.name}" required="true" label="#{bundle.personName}" />
-				<h:outputText value="* #{bundle.personAge}" />
-				<p:inputText value="#{personBean.person.age}" required="true" label="#{bundle.personAge}" />
-				<h:outputText value="* #{bundle.personCountry}" />
+				<h:outputText value="* #{I18NBean.language.personName}" />
+				<p:inputText value="#{personBean.person.name}" required="true" label="#{I18NBean.language.personName}" />
+				<h:outputText value="* #{I18NBean.language.personAge}" />
+				<p:inputText value="#{personBean.person.age}" required="true" label="#{I18NBean.language.personAge}" />
+				<h:outputText value="* #{I18NBean.language.personCountry}" />
 		
-				<p:autoComplete forceSelection="true" value="#{personBean.person.country}" label="#{bundle.country}" required="true" var="country"
+				<p:autoComplete forceSelection="true" value="#{personBean.person.country}" label="#{I18NBean.language.country}" required="true" var="country"
 				itemLabel="#{country.name}" itemValue="#{country}" completeMethod="#{countryBean.getAllCountries()}" dropdown="true" />
-				<p:commandButton id="saveBtn" value="#{bundle.create}" icon="pi pi-plus"
+				<p:commandButton id="saveBtn" value="#{I18NBean.language.create}" icon="pi pi-plus"
 					action="#{personBean.createPerson()}"
 					onclick="$('#saveBtn').attr('disabled',true);"
 					update=":messageGrowl :personsForm:personsTable"
 					oncomplete="closeDialogIfSucess(xhr, status, args, PF('personCreateDialogWidget'), 'personCreateDialogId')" />
-				<p:commandButton value="#{bundle.cancel}" icon="pi pi-ban" actionListener="#{personBean.resetPerson()}"
+				<p:commandButton value="#{I18NBean.language.cancel}" icon="pi pi-ban" actionListener="#{personBean.resetPerson()}"
 					onclick="PF('personCreateDialogWidget').hide()" type="button" />
 			</h:panelGrid>
 		</h:form>

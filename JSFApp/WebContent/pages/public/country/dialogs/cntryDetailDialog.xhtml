@@ -6,10 +6,10 @@
 		closable="true" draggable="false" resizable="false">
 		<h:form id="countryDetailDialogForm" prependId="false">
 			<h:panelGrid columns="2">
-				<h:outputText value="#{bundle.countryName}" />
+				<h:outputText value="#{I18NBean.language.countryName}" />
 				<h:outputText value="#{countryBean.country.name}" />
 
-				<p:commandButton value="#{bundle.ok}" icon="pi pi-check" actionListener="#{countryBean.resetCountry()}"
+				<p:commandButton value="#{I18NBean.language.ok}" icon="pi pi-check" actionListener="#{countryBean.resetCountry()}"
 					onclick="PF('countryDetailDialogWidget').hide()" />
 			</h:panelGrid>
 		</h:form>

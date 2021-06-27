@@ -15,14 +15,13 @@
 		<p:growl id="messageGrowl" />
 			<h:form id="loginForm" style="display: flex; flex-direction: column; max-width: 300px;">
 				<h:panelGrid columns="2">
-					<h:outputText value="#{bundle.username}" />
-					<p:inputText value="#{loginBean.username}" required="true" label="#{bundle.username}" />
-					<h:outputText value="#{bundle.password}" />
-					<p:password value="#{loginBean.password}" required="true" label="#{bundle.password}" autocomplete="off">
-						
+					<h:outputText value="#{I18NBean.language.username}" />
+					<p:inputText value="#{loginBean.username}" required="true" label="#{I18NBean.language.username}" />
+					<h:outputText value="#{I18NBean.language.password}" />
+					<p:password value="#{loginBean.password}" required="true" label="#{I18NBean.language.password}" autocomplete="off">
 					</p:password>
 				</h:panelGrid>
-				<p:commandButton value="#{bundle.login}" icon="pi pi-unlock"
+				<p:commandButton value="#{I18NBean.language.login}" icon="pi pi-unlock"
 					actionListener="#{loginBean.login()}" />
 			</h:form>
 		</p:panel>

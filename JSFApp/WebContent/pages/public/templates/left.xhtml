@@ -10,17 +10,22 @@
 		<h:form>
 			<p:menu>
 				<p:submenu label="Base data">
-					<p:menuitem value="#{bundle.personPlural}"
+					<p:menuitem value="#{I18NBean.language.personPlural}"
 						action="/pages/public/person/personIndex.xhtml?faces-redirect=true"
 						update="messages" ajax="false" icon="pi pi-users" />
-					<p:menuitem value="#{bundle.languagePlural}"
+					<p:menuitem value="#{I18NBean.language.languagePlural}"
 						action="/pages/public/language/languageIndex.xhtml?faces-redirect=true"
 						update="messages" ajax="false" icon="pi pi-comments" />
-					<p:menuitem value="#{bundle.countryPlural}"
+					<p:menuitem value="#{I18NBean.language.countryPlural}"
 							action="/pages/public/country/countryIndex.xhtml?faces-redirect=true"
 							update="messages" ajax="false" icon="pi pi-globe" />
+					<p:menuitem value="#{I18NBean.language.myAccount}"
+							action="/pages/public/user/userIndex.xhtml?faces-redirect=true"
+							update="messages" ajax="false" icon="pi pi-user" />
 				</p:submenu>
 			</p:menu>
+			<p:commandButton value="#{I18NBean.language.updateLanguage}" icon="pi pi-unlock"
+				actionListener="#{I18NBean.setLanguageByString(userBean.user.language)}" />
 		</h:form>
 </h:body>
 </html>

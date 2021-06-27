@@ -2,7 +2,8 @@ package ch.bbzbl.languages;
 
 public class De extends I18N{
 	public De() {
-		name="De";
+		super();
+		name="DE";
 		//Actions
 		welcomeMessage = "Wilkommen zu unseren ersten JSF Applikation";
 		update="Bearbeiten";
@@ -18,10 +19,10 @@ public class De extends I18N{
 
 		//Person
 		person="Person";
-		personPlural="Peartsonenen";
+		personPlural="Personen";
 		personName="Name";
 		personAge="Alter";
-		personCountry="Laand";
+		personCountry="Land";
 		personLanguages="Diese Sprachen gehören zu";
 		personAddLanguageTo="Füge die ausgewählte Sprache zu";
 		personRemoveLanguageFrom="Entferne die Ausgewählte Sprache von";
@@ -42,5 +43,10 @@ public class De extends I18N{
 		password="Passwort";
 		login="Einloggen";
 		logout="Ausloggen";
+		myAccount="Mein Profil";
+		i18nLang="Bevorzugte Sprache";
+		isAdmin="Bist du ein Admin";
+		changeLanguage="Ändere die Sprache";
+		updateLanguage="Sprache aktualisieren";
 	}
 }

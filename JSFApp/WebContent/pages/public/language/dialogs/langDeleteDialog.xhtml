@@ -5,12 +5,12 @@
 	<p:dialog widgetVar="languageDeleteDialogWidget" id="languageDeleteDialogId" height="150" width="500" modal="true"
 		closable="true" draggable="false" resizable="false">
 		<h:form id="languageDeleteDialogForm" prependId="false">
-			#{bundle.deleteRecord}: <h:outputText value="#{languageBean.language.name}" /><br/><br/>
+			#{I18NBean.language.deleteRecord}: <h:outputText value="#{languageBean.language.name}" /><br/><br/>
 
-			<p:commandButton value="#{bundle.delete}" icon="pi pi-trash" action="#{languageBean.deleteLanguage()}"
+			<p:commandButton value="#{I18NBean.language.delete}" icon="pi pi-trash" action="#{languageBean.deleteLanguage()}"
 				update=":messageGrowl :languagesForm:languagesTable"
 				oncomplete="closeDialogIfSucess(xhr, status, args, PF('languageDeleteDialogWidget'), 'languageDeleteDialogId')" />
-			<p:commandButton value="#{bundle.cancel}" icon="pi pi-ban" actionListener="#{languageBean.resetLanguage()}"
+			<p:commandButton value="#{I18NBean.language.cancel}" icon="pi pi-ban" actionListener="#{languageBean.resetLanguage()}"
 				onclick="PF('languageDeleteDialogWidget').hide()" type="button" />
 		</h:form>
 	</p:dialog>

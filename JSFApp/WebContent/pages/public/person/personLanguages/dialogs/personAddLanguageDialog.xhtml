@@ -5,16 +5,16 @@
 	<p:dialog widgetVar="personAddLanguageDialogWidget" id="personAddLanguageDialogId" height="150" width="500" modal="true" closable="true" draggable="false"
 		resizable="false">
 		<h:form id="personAddLanguageDialogForm" prependId="false">
-			#{bundle.personAddLanguageTo}: <h:outputText value="#{personBean.personWithLanguages.name}" />
+			#{I18NBean.language.personAddLanguageTo}: <h:outputText value="#{personBean.personWithLanguages.name}" />
 			<br />
-            <p:autoComplete forceSelection="true" value="#{personBean.language}" label="#{bundle.language}" required="true" var="language"
+            <p:autoComplete forceSelection="true" value="#{personBean.language}" label="#{I18NBean.language.language}" required="true" var="language"
 				itemLabel="#{language.name}" itemValue="#{language}" completeMethod="#{personBean.getRemainingLanguages}" dropdown="true" />
 			<br />
 			<br />
 
-			<p:commandButton value="#{bundle.add}" icon="pi pi-plus" action="#{personBean.addLanguageToPerson()}" update=":messageGrowl :personsForm:personsTable"
+			<p:commandButton value="#{I18NBean.language.add}" icon="pi pi-plus" action="#{personBean.addLanguageToPerson()}" update=":messageGrowl :personsForm:personsTable"
 				oncomplete="closeDialogIfSucess(xhr, status, args,PF('personAddLanguageDialogWidget'), 'personAddLanguageDialogId')" />
-			<p:commandButton value="#{bundle.cancel}" icon="pi pi-ban" onclick="PF('personAddLanguageDialogWidget').hide()" type="button" />
+			<p:commandButton value="#{I18NBean.language.cancel}" icon="pi pi-ban" onclick="PF('personAddLanguageDialogWidget').hide()" type="button" />
 		</h:form>
 	</p:dialog>
 </h:body>

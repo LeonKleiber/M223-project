@@ -10,16 +10,16 @@
 		closable="true" draggable="false" resizable="false">
 		<h:form id="countryUpdateDialogForm" prependId="false">
 			<h:panelGrid columns="2">
-				<h:outputText value="* #{bundle.countryName}" />
-				<p:inputText value="#{countryBean.country.name}" required="true" label="#{bundle.countryName}" >
+				<h:outputText value="* #{I18NBean.language.countryName}" />
+				<p:inputText value="#{countryBean.country.name}" required="true" label="#{I18NBean.language.countryName}" >
 					<f:validateLength minimum="4" />
 				</p:inputText>
 		
-				<p:commandButton value="#{bundle.update}" icon="pi pi-save"
+				<p:commandButton value="#{I18NBean.language.update}" icon="pi pi-save"
 					action="#{countryBean.updateCountry()}"
 					update=":messageGrowl :countriesForm:countriesTable"
 					oncomplete="closeDialogIfSucess(xhr, status, args, PF('countryUpdateDialogWidget'), 'countryUpdateDialogId')" />
-				<p:commandButton value="#{bundle.cancel}" icon="pi pi-ban" actionListener="#{countryBean.resetCountry()}"
+				<p:commandButton value="#{I18NBean.language.cancel}" icon="pi pi-ban" actionListener="#{countryBean.resetCountry()}"
 					onclick="PF('countryUpdateDialogWidget').hide()" type="button" />
 			</h:panelGrid>
 		</h:form>

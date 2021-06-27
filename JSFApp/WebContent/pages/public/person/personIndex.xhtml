@@ -5,26 +5,26 @@
 	<ui:composition template="/pages/public/templates/master.xhtml">
 		<ui:define name="divMain">
 			<h:form id="personsForm">
-				<p:dataTable id="personsTable" value="#{personBean.allPersons}" var="person" emptyMessage="#{bundle.noRecords}" paginator="true" rows="10"
+				<p:dataTable id="personsTable" value="#{personBean.allPersons}" var="person" emptyMessage="#{I18NBean.language.noRecords}" paginator="true" rows="10"
 					paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
 					rowsPerPageTemplate="5,10,15" selectionMode="single" rowKey="#{person.id}">
 					<p:column>
 						<f:facet name="header">
-							<h:outputText value="#{bundle.personName}" />
+							<h:outputText value="#{I18NBean.language.personName}" />
 						</f:facet>
 
 						<h:outputText value="#{person.name}" />
 					</p:column>
 					<p:column>
 						<f:facet name="header">
-							<h:outputText value="#{bundle.personAge}" />
+							<h:outputText value="#{I18NBean.language.personAge}" />
 						</f:facet>
 
 						<h:outputText value="#{person.age}" />
 					</p:column>
 					<p:column>
 						<f:facet name="header">
-							<h:outputText value="#{bundle.personCountry}" />
+							<h:outputText value="#{I18NBean.language.personCountry}" />
 						</f:facet>
 
 						<h:outputText  value="#{person.country.name}" />
@@ -42,7 +42,7 @@
 							<f:setPropertyActionListener target="#{personBean.person}" value="#{person}" />
 						</p:commandButton>
 						<p:spacer width="10px" />
-						<p:commandButton value="#{bundle.languagePlural}" icon="pi pi-pencil" ajax="false"
+						<p:commandButton value="#{I18NBean.language.languagePlural}" icon="pi pi-pencil" ajax="false"
 							action="#{personBean.editPersonLanguages()}">
 								<f:setPropertyActionListener target="#{personBean.person}" value="#{person}" />
 						</p:commandButton>
@@ -52,7 +52,7 @@
 
 					
 				</p:dataTable>
-				<p:commandButton value="#{bundle.create} #{bundle.person}" icon="pi pi-plus" update=":personCreateDialogForm"
+				<p:commandButton value="#{I18NBean.language.create} #{I18NBean.language.person}" icon="pi pi-plus" update=":personCreateDialogForm"
 					actionListener="#{personBean.resetPerson()}" onclick="PF('personCreateDialogWidget').show()" />
 			</h:form>
 

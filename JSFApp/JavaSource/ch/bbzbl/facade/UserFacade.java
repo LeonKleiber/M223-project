@@ -31,15 +31,20 @@ public class UserFacade implements Serializable{
 		EntityManagerHelper.commitAndCloseTransaction();
 	}
 
-	public User findUser(int countryId) {
+	public User findUser(int userId) {
 		EntityManagerHelper.beginTransaction();
-		User user = userDAO.find(countryId);
+		User user = userDAO.find(userId);
 		EntityManagerHelper.commitAndCloseTransaction();
 		return user;
 	}
 	
 	public User isValidLogin(String username, String password) {
-		return this.findUser(1);
+		User user = userDAO.findByUsername(username);
+		if(password.equals(user.getPassword())) {
+			return user;			
+		} else {
+			return null;
+		}
 	}
 
 	public List<User> listAll() {

@@ -10,15 +10,15 @@
 		closable="true" draggable="false" resizable="false">
 		<h:form id="personUpdateDialogForm" prependId="false">
 			<h:panelGrid columns="2">
-				<h:outputText value="* #{bundle.personName}" />
-				<p:inputText value="#{personBean.person.name}" required="true" label="#{bundle.personName}" />
-				<h:outputText value="* #{bundle.personAge}" />
-				<p:inputText value="#{personBean.person.age}" required="true" label="#{bundle.personAge}" />
-				<p:commandButton value="#{bundle.update}" icon="pi pi-save"
+				<h:outputText value="* #{I18NBean.language.personName}" />
+				<p:inputText value="#{personBean.person.name}" required="true" label="#{I18NBean.language.personName}" />
+				<h:outputText value="* #{I18NBean.language.personAge}" />
+				<p:inputText value="#{personBean.person.age}" required="true" label="#{I18NBean.language.personAge}" />
+				<p:commandButton value="#{I18NBean.language.update}" icon="pi pi-save"
 					action="#{personBean.updatePerson()}"
 					update=":messageGrowl :personsForm:personsTable"
 					oncomplete="closeDialogIfSucess(xhr, status, args, PF('personUpdateDialogWidget'), 'personUpdateDialogId')" />
-				<p:commandButton value="#{bundle.cancel}" icon="pi pi-ban" actionListener="#{personBean.resetPerson()}"
+				<p:commandButton value="#{I18NBean.language.cancel}" icon="pi pi-ban" actionListener="#{personBean.resetPerson()}"
 					onclick="PF('personUpdateDialogWidget').hide()" type="button" />
 			</h:panelGrid>
 		</h:form>

@@ -1,6 +1,12 @@
 package ch.bbzbl.dao;
 
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
+
 import ch.bbzbl.entity.Language;
+import ch.bbzbl.entity.User;
 
 public class LanguageDAO extends GenericDAO<Language> {
 

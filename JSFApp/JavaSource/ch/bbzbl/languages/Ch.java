@@ -2,11 +2,12 @@ package ch.bbzbl.languages;
 
 public class Ch extends I18N {
 	public Ch() {
-		name="Ch";
+		super();
+		name="CH";
 		//Actions
-		welcomeMessage = "I begrües euch härzlich zu uneärä ärschtä JSF App";
+		welcomeMessage = "I begrües euch härzlich zu unsärä ärschtä JSF App";
 		update="Öpdeit";
-		create="Erstelle";
+		create="Erstellä";
 		delete="Lööschä";
 		cancel="Abbrächä";
 		detail="Infos";
@@ -14,18 +15,18 @@ public class Ch extends I18N {
 		remove="Wäg näh";
 		ok="Okay";
 		noRecords="Mir hei kei Datä";
-		deleteRecord="Wilsch du dä Iitrag löschä";
+		deleteRecord="Wiusch du dä Iitrag löschä?";
 
 		//Person
-		person="Mensch";
-		personPlural="Menschä";
+		person="Mönsch";
+		personPlural="Mönschä";
 		personName="Namä";
-		personAge="Alter";
+		personAge="Auter";
 		personCountry="Land";
 		personLanguages="Das Land ghört zu";
 		personAddLanguageTo="Mach das Land zu";
-		personRemoveLanguageFrom="Löschs usgwähltä Land vom ";
-		personEditLanguages="Änärad sLand";
+		personRemoveLanguageFrom="Löschs usgwähutä Land vom ";
+		personEditLanguages="Ändärad sLand";
 
 		//Language
 		language="Sproch";
@@ -42,5 +43,10 @@ public class Ch extends I18N {
 		password="Passwort";
 		login="Ilogge";
 		logout="Uslogge";
+		myAccount="Mis Profiu";
+		i18nLang="Bevorzugti Sprooch";
+		isAdmin="Bisch du e Administrator";
+		changeLanguage="Wächsle d Sprooch";
+		updateLanguage="D Sproch öpdaite";
 	}
 }

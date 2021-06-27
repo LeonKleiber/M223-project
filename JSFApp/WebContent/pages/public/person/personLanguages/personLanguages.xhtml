@@ -4,14 +4,14 @@
 <h:body>
 	<ui:composition template="/pages/public/templates/master.xhtml">
 		<ui:define name="divMain">
-			<h3>#{bundle.personLanguages}: <h:outputText value="#{personBean.personWithLanguages.name}" /></h3> 
+			<h3>#{I18NBean.language.personLanguages}: <h:outputText value="#{personBean.personWithLanguages.name}" /></h3> 
 			<h:form id="personsForm">
-				<p:dataTable id="personsTable" value="#{personBean.personWithLanguages.languages}" var="language" emptyMessage="#{bundle.noRecords}" paginator="true" rows="10"
+				<p:dataTable id="personsTable" value="#{personBean.personWithLanguages.languages}" var="language" emptyMessage="#{I18NBean.language.noRecords}" paginator="true" rows="10"
 					paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
 					rowsPerPageTemplate="5,10,15">
 					<p:column>
 						<f:facet name="header">
-							<h:outputText value="#{bundle.languageName}" />
+							<h:outputText value="#{I18NBean.language.languageName}" />
 						</f:facet>
 
 						<h:outputText value="#{language.name}" />
@@ -25,7 +25,7 @@
 					</p:column>
 
 				</p:dataTable>
-				<p:commandButton value="#{bundle.add}  #{bundle.language}" icon="pi pi-plus" onclick="PF('personAddLanguageDialogWidget').show()" update=":personAddLanguageDialogForm" />
+				<p:commandButton value="#{I18NBean.language.add}  #{I18NBean.language.language}" icon="pi pi-plus" onclick="PF('personAddLanguageDialogWidget').show()" update=":personAddLanguageDialogForm" />
 			</h:form>
 
 			<ui:include src="/pages/public/person/personLanguages/dialogs/personAddLanguageDialog.xhtml" />

@@ -10,17 +10,17 @@
 		closable="true" draggable="false" resizable="false">
 		<h:form id="countryCreateDialogForm" prependId="false">
 			<h:panelGrid columns="2">
-				<h:outputText value="* #{bundle.countryName}" />
-				<p:inputText value="#{countryBean.country.name}" required="true" label="#{bundle.countryName}" >
+				<h:outputText value="* #{I18NBean.language.countryName}" />
+				<p:inputText value="#{countryBean.country.name}" required="true" label="#{I18NBean.language.countryName}" >
 					<f:validateLength minimum="4" />
 				</p:inputText>
 		
-				<p:commandButton id="saveBtn" value="#{bundle.create}" icon="pi pi-plus"
+				<p:commandButton id="saveBtn" value="#{I18NBean.language.create}" icon="pi pi-plus"
 					action="#{countryBean.createCountry()}"
 					onclick="$('#saveBtn').attr('disabled',true);"
 					update=":messageGrowl :countriesForm:countriesTable"
 					oncomplete="closeDialogIfSucess(xhr, status, args, PF('countryCreateDialogWidget'), 'countryCreateDialogId')" />
-				<p:commandButton value="#{bundle.cancel}" icon="pi pi-ban" actionListener="#{countryBean.resetCountry()}"
+				<p:commandButton value="#{I18NBean.language.cancel}" icon="pi pi-ban" actionListener="#{countryBean.resetCountry()}"
 					onclick="PF('countryCreateDialogWidget').hide()" type="button" />
 			</h:panelGrid>
 		</h:form>

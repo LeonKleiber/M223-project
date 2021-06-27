@@ -10,16 +10,16 @@
 		closable="true" draggable="false" resizable="false">
 		<h:form id="languageUpdateDialogForm" prependId="false">
 			<h:panelGrid columns="2">
-				<h:outputText value="* #{bundle.languageName}" />
-				<p:inputText value="#{languageBean.language.name}" required="true" label="#{bundle.languageName}" >
+				<h:outputText value="* #{I18NBean.language.languageName}" />
+				<p:inputText value="#{languageBean.language.name}" required="true" label="#{I18NBean.language.languageName}" >
 					<f:validateLength minimum="4" />
 				</p:inputText>
 		
-				<p:commandButton value="#{bundle.update}" icon="pi pi-save"
+				<p:commandButton value="#{I18NBean.language.update}" icon="pi pi-save"
 					action="#{languageBean.updateLanguage()}"
 					update=":messageGrowl :languagesForm:languagesTable"
 					oncomplete="closeDialogIfSucess(xhr, status, args, PF('languageUpdateDialogWidget'), 'languageUpdateDialogId')" />
-				<p:commandButton value="#{bundle.cancel}" icon="pi pi-ban" actionListener="#{languageBean.resetLanguage()}"
+				<p:commandButton value="#{I18NBean.language.cancel}" icon="pi pi-ban" actionListener="#{languageBean.resetLanguage()}"
 					onclick="PF('languageUpdateDialogWidget').hide()" type="button" />
 			</h:panelGrid>
 		</h:form>

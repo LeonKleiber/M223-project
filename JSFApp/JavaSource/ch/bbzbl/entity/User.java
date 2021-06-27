@@ -21,7 +21,7 @@ public class User implements Serializable {
 	private int id;
 	private String username;
 	private String password;
-	private String preferenceColor;
+	private String language;
 	private boolean admin;
 	
 	
@@ -55,13 +55,16 @@ public class User implements Serializable {
 		this.password = password;
 	}
 
-	public String getPreferenceColor() {
-		return preferenceColor;
+
+	public String getLanguage() {
+		return language;
 	}
 
-	public void setPreferenceColor(String preferenceColor) {
-		this.preferenceColor = preferenceColor;
+
+	public void setLanguage(String language) {
+		this.language = language;
 	}
+
 
 	public int getId() {
 		return id;

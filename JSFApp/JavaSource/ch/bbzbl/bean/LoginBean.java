@@ -21,13 +21,14 @@ public class LoginBean extends AbstractBean {
 		User user = userFacade.isValidLogin(username, password);
 		if(user != null){
 			userBean.setUser(user);
+			
 			FacesContext context = FacesContext.getCurrentInstance();
 			HttpServletRequest request = (HttpServletRequest)
 	
 			context.getExternalContext().getRequest();
 	
 			request.getSession().setAttribute("user", user); 
-			return "/"; 
+			return "../../pages/public/index.xhtml"; 
 		}
 		displayErrorMessageToUser("Check username and/or password");
 		return "index?faces-redirect=true";

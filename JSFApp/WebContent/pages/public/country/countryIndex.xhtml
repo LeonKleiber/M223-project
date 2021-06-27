@@ -5,12 +5,12 @@
 	<ui:composition template="/pages/public/templates/master.xhtml">
 		<ui:define name="divMain">
 			<h:form id="countriesForm">
-				<p:dataTable id="countriesTable" value="#{countryBean.allCountries}" var="country" emptyMessage="#{bundle.noRecords}" paginator="true" rows="10"
+				<p:dataTable id="countriesTable" value="#{countryBean.allCountries}" var="country" emptyMessage="#{I18NBean.language.noRecords}" paginator="true" rows="10"
 					paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
 					rowsPerPageTemplate="5,10,15">
 					<p:column>
 						<f:facet name="header">
-							<h:outputText value="#{bundle.countryName}" />
+							<h:outputText value="#{I18NBean.language.countryName}" />
 						</f:facet>
 
 						<h:outputText value="#{country.name}" />
@@ -31,7 +31,7 @@
 					</p:column>
 
 				</p:dataTable>
-				<p:commandButton value="#{bundle.create} #{bundle.country}" icon="pi pi-plus" update=":countryCreateDialogForm"
+				<p:commandButton value="#{I18NBean.language.create} #{I18NBean.language.country}" icon="pi pi-plus" update=":countryCreateDialogForm"
 					actionListener="#{countryBean.resetCountry()}" onclick="PF('countryCreateDialogWidget').show()" />
 			</h:form>
 
