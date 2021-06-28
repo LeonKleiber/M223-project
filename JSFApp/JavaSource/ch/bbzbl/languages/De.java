@@ -48,5 +48,7 @@ public class De extends I18N{
 		isAdmin="Bist du ein Admin";
 		changeLanguage="Ändere die Sprache";
 		updateLanguage="Sprache aktualisieren";
+		
+		accessDenied="Zugriff verweigert - geh nach Hause";
 	}
 }

@@ -16,7 +16,7 @@ import javax.servlet.http.HttpSession;
 
 import ch.bbzbl.entity.User;
 
-public class AdminFilter {
+public class AdminFilter implements Filter {
 	private static List<String> allowedURIs;
 	/**
 	* @see Filter#init(FilterConfig)
@@ -46,23 +46,23 @@ public class AdminFilter {
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpSession session = req.getSession();
 		if (session.isNew()) {
-			doLogin(request, response, req);
+			accessDenied(request, response, req);
 			return;
 		}
 		User user = (User) session.getAttribute("user");
 		if (user == null && !allowedURIs.contains(req.getRequestURI())) {
 			System.out.println(req.getRequestURI());
-			doLogin(request, response, req);
+			accessDenied(request, response, req);
 			return;
+		} else {
+			if(!user.isAdmin()) {
+				accessDenied(request, response, req);
+				return;
+			}
 		}
-		chain.doFilter(request, response);
+		chain.doFilter(request, response);				
 	}
-	protected void doLogin(ServletRequest request, ServletResponse response,
-		HttpServletRequest req) throws ServletException, IOException {
-		
-		RequestDispatcher rd = req.getRequestDispatcher("/pages/public/loginIndex.xhtml");
-		rd.forward(request, response);
-	}
+	
 	protected void accessDenied(ServletRequest request, ServletResponse response, HttpServletRequest req) throws ServletException, IOException {
 		RequestDispatcher rd = req.getRequestDispatcher("/pages/public/accessDenied.xhtml");
 		rd.forward(request, response);

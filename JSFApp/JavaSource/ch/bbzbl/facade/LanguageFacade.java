@@ -10,15 +10,15 @@ import ch.bbzbl.entity.Language;
 public class LanguageFacade implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
-	private LanguageDAO languageDAO = new LanguageDAO();
-
 	public void createLanguage(Language language) {
+		LanguageDAO languageDAO = new LanguageDAO();
 		EntityManagerHelper.beginTransaction();
 		languageDAO.save(language);
 		EntityManagerHelper.commitAndCloseTransaction();
 	}
 
 	public void updateLanguage(Language language) {
+		LanguageDAO languageDAO = new LanguageDAO();
 		EntityManagerHelper.beginTransaction();
 		languageDAO.update(language);
 		//Language persistedLng = languageDAO.find(language.getId());
@@ -27,6 +27,7 @@ public class LanguageFacade implements Serializable{
 	}
 	
 	public void deleteLanguage(Language language) {
+		LanguageDAO languageDAO = new LanguageDAO();
 		EntityManagerHelper.beginTransaction();
 		Language persistedLng = languageDAO.findReferenceOnly(language.getId());
 		languageDAO.delete(persistedLng);
@@ -34,6 +35,7 @@ public class LanguageFacade implements Serializable{
 	}
 
 	public Language findLanguage(int languageId) {
+		LanguageDAO languageDAO = new LanguageDAO();
 		EntityManagerHelper.beginTransaction();
 		Language language = languageDAO.find(languageId);
 		EntityManagerHelper.commitAndCloseTransaction();
@@ -41,6 +43,7 @@ public class LanguageFacade implements Serializable{
 	}
 
 	public List<Language> listAll() {
+		LanguageDAO languageDAO = new LanguageDAO();
 		EntityManagerHelper.beginTransaction();
 		List<Language> result = languageDAO.findAll();
 		EntityManagerHelper.commitAndCloseTransaction();

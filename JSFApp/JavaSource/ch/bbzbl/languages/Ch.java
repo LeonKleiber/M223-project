@@ -48,5 +48,7 @@ public class Ch extends I18N {
 		isAdmin="Bisch du e Administrator";
 		changeLanguage="Wächsle d Sprooch";
 		updateLanguage="D Sproch öpdaite";
+		
+		accessDenied="Du bisch falsch - gang hei";
 	}
 }

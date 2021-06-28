@@ -48,5 +48,7 @@ public class En extends I18N {
 		isAdmin="Are you admin";
 		changeLanguage="Change preferred language";
 		updateLanguage="Update language";
+		
+		accessDenied="You're wrong dude - go home!";
 	}
 }

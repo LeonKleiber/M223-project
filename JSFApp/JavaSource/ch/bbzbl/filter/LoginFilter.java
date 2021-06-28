@@ -62,8 +62,4 @@ public class LoginFilter implements Filter {
 		RequestDispatcher rd = req.getRequestDispatcher("/pages/public/loginIndex.xhtml");
 		rd.forward(request, response);
 	}
-	protected void accessDenied(ServletRequest request, ServletResponse response, HttpServletRequest req) throws ServletException, IOException {
-		RequestDispatcher rd = req.getRequestDispatcher("/pages/public/accessDenied.xhtml");
-		rd.forward(request, response);
-	}
 }

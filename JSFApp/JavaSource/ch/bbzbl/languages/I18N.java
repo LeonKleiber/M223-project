@@ -54,6 +54,8 @@ public class I18N {
 	public String changeLanguage;
 	public String updateLanguage;
 	
+	public String accessDenied;
+	
 	public String getName() {
 		return name;
 	}
@@ -269,5 +271,11 @@ public class I18N {
 	}
 	public void setUpdateLanguage(String updateLanguage) {
 		this.updateLanguage = updateLanguage;
+	}
+	public String getAccessDenied() {
+		return accessDenied;
+	}
+	public void setAccessDenied(String accessDenied) {
+		this.accessDenied = accessDenied;
 	}
 }

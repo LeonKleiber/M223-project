@@ -40,11 +40,13 @@ public class UserFacade implements Serializable{
 	
 	public User isValidLogin(String username, String password) {
 		User user = userDAO.findByUsername(username);
-		if(password.equals(user.getPassword())) {
-			return user;			
-		} else {
-			return null;
-		}
+		if(user != null) {
+			if(password.equals(user.getPassword())) {
+				return user;			
+			} else {
+				return null;
+			}			
+		} else return null;	
 	}
 
 	public List<User> listAll() {
