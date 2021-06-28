@@ -5,7 +5,7 @@ public class En extends I18N {
 		super();
 		name="EN";
 		//Actions
-		welcomeMessage = "Welcome to your first JSF application. Look at the small overview of JSF architecture";
+		welcomeMessage = "Welcome to JSF";
 		update="Update";
 		create="Create";
 		delete="Delete";

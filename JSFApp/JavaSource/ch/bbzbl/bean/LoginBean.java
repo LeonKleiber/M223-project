@@ -28,7 +28,7 @@ public class LoginBean extends AbstractBean {
 			context.getExternalContext().getRequest();
 	
 			request.getSession().setAttribute("user", user); 
-			return "../../pages/public/index.xhtml"; 
+			return "/pages/public/index?faces-redirect=true"; 
 		}
 		displayErrorMessageToUser("Check username and/or password");
 		return "index?faces-redirect=true";

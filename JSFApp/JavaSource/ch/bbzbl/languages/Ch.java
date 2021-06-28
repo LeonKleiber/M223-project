@@ -5,7 +5,7 @@ public class Ch extends I18N {
 		super();
 		name="CH";
 		//Actions
-		welcomeMessage = "I begrües euch härzlich zu unsärä ärschtä JSF App";
+		welcomeMessage = "I begrües euch härzlich zu unsärä JSF Äpp";
 		update="Öpdeit";
 		create="Erstellä";
 		delete="Lööschä";

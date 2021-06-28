@@ -5,7 +5,7 @@ public class De extends I18N{
 		super();
 		name="DE";
 		//Actions
-		welcomeMessage = "Wilkommen zu unseren ersten JSF Applikation";
+		welcomeMessage = "Wilkommen zu JSF";
 		update="Bearbeiten";
 		create="Erstellen";
 		delete="Löschen";
